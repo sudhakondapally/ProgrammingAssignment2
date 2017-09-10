@@ -4,6 +4,8 @@ library(swirl)
 ls()
 swirl()
 
+#the  below code will inverse the matrix
+
 makeCacheMatrix <- function(x = matrix()) {
   m <- NULL
   set <- function(y) {
@@ -11,13 +13,15 @@ makeCacheMatrix <- function(x = matrix()) {
     m <<- NULL
   }
   get <- function() x
-  setinv <- function(solve) m <<- solve
-  getin <- function() m
+  setsolve <- function(solve) m <<- solve # here the function will inverse the code
+  getsolve <- function() m
   list(set = set, get = get,
        setsolve = setsolve,
        getsolve = getsolve)
 }
 
+# the below function code will check wether the matrix is inversed or not
+#if matrix is invdrsed then it will not inverse again
 
 cachesolve <- function(x, ...)
       ## Return a matrix that is the inverse of 'x'
